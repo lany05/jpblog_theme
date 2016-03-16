@@ -1,0 +1,11 @@
+// CSS Resets
+
+@include reset-html5;
+
+h1,h2,h3,h4,h5{
+	@include reset-box-model;
+}
+article, iframe, canvas, video, audio{
+	@include reset-box-model;
+	width: 100%;
+}
