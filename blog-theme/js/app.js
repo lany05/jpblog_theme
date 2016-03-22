@@ -1,7 +1,6 @@
 jQuery(document).ready(function($) {
-
 	$( ".search-toggle" ).click(function() {
-		$( ".search-input, .main-nav, .search-toggle" ).toggleClass('active');
+		$( ".search-input, .menu-item, .search-toggle" ).toggleClass('active');
 	});
 
 	$('#twitter-slider').owlCarousel({
@@ -15,4 +14,3 @@ jQuery(document).ready(function($) {
 		dot:true
 	});
 });
-
