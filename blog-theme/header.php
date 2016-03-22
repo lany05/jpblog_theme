@@ -7,6 +7,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title><?php wp_title(); ?></title>
     <?php wp_head(); ?>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body class="bg-body">
 <header class="navbar navbar-static-top header-jp-blog">
@@ -22,22 +26,14 @@
                     </button>
                     <a href="<?php bloginfo('url'); ?>" class="logo-blog" title="Blog Jobplanet">Official Blog</a>
                 </div>
-                <ul class="navbar-blog collapse" id="main-nav">
-                    <li class="main-nav"><a href="custom-page.html">Tentang Jobplanet</a></li>
-                    <li class="main-nav"><a href="section.html">Info &amp; Tips</a></li>
-                    <li class="main-nav"><a href="section.html">Press Release</a></li>
-                    <li class="main-nav"><a href="contact.html">Kontak Kami</a></li>
-                    <div class="search-toggle">
-                        <button type="button"></button>
-                    </div>
-                    <div class="search-input">
-                        <form class="form-horizontal" method="post" action="search-result.html">
-                            <input type="text" class="form-control" placeholder="Enter keyword then hit Enter" />
-                            <input type="submit" value="search" class="submit-disabled">
-                        </form>
-                    </div>
-                </ul>
-
+                <?php if (!has_nav_menu('primary-menu')) { ?>
+                    <?php wp_nav_menu(array('menu_class' => 'navbar-blog', 'menu_id' => 'menu-item')); ?>
+                <?php } else { ?>
+                    <ul class="navbar-blog" id="main-nav">
+                        <?php wp_list_categories('title_li='); ?>
+                    </ul>
+                <?php } ?>
+                <?php get_template_part('searchform'); ?>
             </div>
         </div>
     </div>
