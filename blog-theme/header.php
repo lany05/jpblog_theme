@@ -26,16 +26,14 @@
                     </button>
                     <a href="<?php bloginfo('url'); ?>" class="logo-blog" title="Blog Jobplanet">Official Blog</a>
                 </div>
-                <div class="menu-wrapper collapse" id="main-nav">
-                <?php if (!has_nav_menu('primary-menu')) { ?>
-                    <?php wp_nav_menu(array('menu_class' => 'navbar-blog')); ?>
+                <?php if (has_nav_menu('primary-menu')) { ?>
+                    <?php wp_nav_menu(array('menu_class' => 'navbar-blog', 'menu_id' => 'menu-item')); ?>
                 <?php } else { ?>
-                    <ul class="navbar-blog">
+                    <ul class="navbar-blog" id="main-nav">
                         <?php wp_list_categories('title_li='); ?>
                     </ul>
                 <?php } ?>
                 <?php get_template_part('searchform'); ?>
-                </div>
             </div>
         </div>
     </div>
