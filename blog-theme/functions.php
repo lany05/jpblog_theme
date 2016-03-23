@@ -49,6 +49,17 @@ function pagination($pages = '', $range = 3)
         echo "</ul></div>";
     }
 }
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for content images
+ **/
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+
+function remove_width_attribute( $html ) {
+    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+    return $html;
+}
 
 add_action('init', 'customRSS');
 function customRSS()
@@ -80,7 +91,7 @@ add_action('wp_enqueue_scripts', 'jp_theme_js');
 
 function getPostViews($postID)
 {
-    $count_key = 'views';
+    $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if ($count == '') {
         delete_post_meta($postID, $count_key);
@@ -92,7 +103,7 @@ function getPostViews($postID)
 
 function setPostViews($postID)
 {
-    $count_key = 'views';
+    $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if ($count == '') {
         $count = 0;
