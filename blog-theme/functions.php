@@ -49,6 +49,17 @@ function pagination($pages = '', $range = 3)
         echo "</ul></div>";
     }
 }
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for content images
+ **/
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+
+function remove_width_attribute( $html ) {
+    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+    return $html;
+}
 
 add_action('init', 'customRSS');
 function customRSS()

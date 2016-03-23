@@ -8201,11 +8201,25 @@ article .comment-area {
 .custom-page .custom-content {
     width: 100%;
     display: block;
-    padding: 0 24px 30px 24px;
+    padding: 24px 24px 20px 24px;
     font-size: 16px;
     line-height: 24px;
 }
 
+.custom-page .custom-content img:first-of-type{
+    width: 100%;
+    display: block;
+    clear: both;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width: 479px) {
+    .custom-page .custom-content{
+        padding:16px 16px 0 16px;
+    }
+    .custom-page .custom-content img:first-of-type{
+        margin-bottom: 16px;
+    }
+}
 .empty-post {
     background: #fff;
     padding: 24px;
