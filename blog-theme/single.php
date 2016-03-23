@@ -16,7 +16,7 @@
                     </div>
                     <div class="date-comment">
                         <span class="date"><?php _e('', 'mythemeshop');the_time('j F Y'); ?></span>
-                        <span class="comment-link"><a href="#comment">Leave a comment</a></span>
+                        <span class="comment-link"><a href="#comments">Leave a comment</a></span>
                     </div>
                     <?php get_template_part('include/share'); ?>
                 </div>
@@ -59,7 +59,7 @@
                     );
                     $my_query = new wp_query($args);
                     if ($my_query->have_posts()) {
-                        echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12r"><div class="section-title left p-lr">' . __('RELATED POST', 'mythemeshop') . '</div>';
+                        echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-lr"><div class="section-title left">' . __('Related Posts', 'mythemeshop') . '</div>';
                         while ($my_query->have_posts()) {
                             $my_query->the_post(); ?>
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 p-lr">
