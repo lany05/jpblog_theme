@@ -1,7 +1,13 @@
 <?php
 require_once(dirname(__FILE__) . '/theme-options.php');
 
-add_theme_support('menus');
+/*-----------------------------------------------------------------------------------*/
+/*	Load Translation Text Domain
+/*-----------------------------------------------------------------------------------*/
+
+load_theme_textdomain('mythemeshop', get_template_directory() . '/lang');
+
+if (function_exists('add_theme_support')) add_theme_support('automatic-feed-links');
 
 /*-----------------------------------------------------------------------------------*/
 /*	excerpt
@@ -17,6 +23,18 @@ function excerpt($limit)
     }
     $excerpt = preg_replace('`[[^]]*]`', '', $excerpt);
     return $excerpt;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	Custom Menu Support
+/*-----------------------------------------------------------------------------------*/
+add_theme_support('menus');
+if (function_exists('register_nav_menus')) {
+    register_nav_menus(
+        array(
+            'primary-menu' => 'Primary Menu'
+        )
+    );
 }
 
 /*-----------------------------------------------------------------------------------*/
