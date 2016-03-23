@@ -22,26 +22,7 @@
                         Find Us on Twitter
                     </div>
                     <div class="widget-slider">
-                        <div class="owl-carousel" id="twitter-slider">
-                            <div class="item">
-                                <div class="twitter-feed">
-                                    Apa sih yg harus kamu persiapkan utk menemukan career path terbaik?
-                                    <a href="http://ow.ly/YDta9" target="_blank">http://ow.ly/YDta9</a> <a href="http://pic.twitter.com/s5Qrpb6o5Y" target="_blank">pic.twitter.com/s5Qrpb6o5Y</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="twitter-feed">
-                                    Alasan knp pulang teng-go itu sangat baik buat km >
-                                    <a href="http://ow.ly/YLZ33 " target="_blank">http://ow.ly/YLZ33</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="twitter-feed">
-                                    Leonardo will break the internet today! Congrats
-                                    <a href="https://twitter.com/hashtag/Oscar?src=hash" target="_blank">#Oscar</a>
-                                </div>
-                            </div>
-                        </div>
+                      <div id="twitter-feed"></div>
                     </div>
                     <a href="http://twitter.com/jobplanetid/" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Follow @JobplanetID</a>
                 </div>

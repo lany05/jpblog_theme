@@ -1,4 +1,5 @@
 <?php $options = get_option('blog-theme'); ?>
+<?php setPostViews(get_the_ID()); ?>
 <?php get_header(); ?>
     <div class="container">
         <div class="row">
@@ -18,7 +19,7 @@
                         <span class="date"><?php _e('', 'mythemeshop');the_time('j F Y'); ?></span>
                         <span class="comment-link"><a href="#comment">Leave a comment</a></span>
                     </div>
-                    <?php get_template_part('include/share'); ?>
+                    <?php //get_template_part('include/share'); ?>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 p-lr" id="article-main">
@@ -33,12 +34,13 @@
                         <div class="top-article-info">
                             <span class="writer"><i class="fa fa-user"></i><?php _e('Ditulis oleh ', 'mythemeshop');the_author_posts_link(); ?></span>
                             <span class="date"><i class="fa fa-clock-o"></i><?php _e('', 'mythemeshop');the_time('j F Y'); ?></span>
-                            <span class="share"><i class="fa fa-share"></i><?php echo getPostViews(get_the_ID()); ?> Shares</span>
+                            <span><i class="fa fa-comments"></i> <fb:comments-count href="<?php echo get_permalink($post->ID); ?>"></fb:comments-count></span>
                             <span class="views"><i class="fa fa-eye"></i><?php echo getPostViews(get_the_ID()); ?></span>
                         </div>
                     </div>
                     <div class="single-post-content">
                         <?php the_content(); ?>
+			<div id="comment" style="position:absolute; bottom:360px; left:0;"></div>
                     </div>
                 </article>
             </div>
@@ -75,10 +77,10 @@
                                     </div>
                                     <div class="caption">
                                         <small class="date"><?php the_time('F jS, Y'); ?></small>
-                                        <a href="<?php the_permalink() ?>"><h1 class="featured-title"> <?php the_title(); ?></h1></a>
+                                        <a href="<?php the_permalink() ?>"><h2 class="featured-title"> <?php the_title(); ?></h2></a>
                                         <div class="caption-components">
                                             <span><i class="fa fa-user"></i> By <?php the_author_posts_link('first_name', 'last_name'); ?></span>
-                                            <span><i class="fa fa-comments"></i> <?php comments_number('0', '1', '%'); ?></span>
+                                            <span><i class="fa fa-comments"></i> <fb:comments-count href="<?php echo get_permalink($post->ID); ?>"></fb:comments-count></span>
                                             <span><i class="fa fa-eye"></i> <?php echo getPostViews(get_the_ID()); ?></span>
                                         </div>
                                     </div>

@@ -34,6 +34,7 @@
         </div>
     </div>
 </footer>
+<?php mts_footer(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

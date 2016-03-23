@@ -55,15 +55,15 @@ function pagination($pages = '', $range = 3)
 
     if (1 != $pages) {
         echo "<div class='jp-pagination'><ul>";
-        if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) echo "<li><a rel='nofollow' href='" . get_pagenum_link(1) . "'>&laquo; First</a></li>";
-        if ($paged > 1 && $showitems < $pages) echo "<li><a rel='nofollow' href='" . get_pagenum_link($paged - 1) . "'>&lsaquo; Previous</a></li>";
+        if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) echo "<li><a rel='nofollow' href='" . get_pagenum_link(1) . "' style='display:inline-block !important;width: auto !important;padding: 8px 12px;'>&laquo; First</a></li>";
+        if ($paged > 1 && $showitems < $pages) echo "<li><a rel='nofollow' href='" . get_pagenum_link($paged - 1) . "' style='display:inline-block !important;width: auto !important;padding: 8px 12px;'>&lsaquo; Previous</a></li>";
         for ($i = 1; $i <= $pages; $i++) {
             if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
                 echo ($paged == $i) ? "<li><span class='selected'>" . $i . "</span></li>" : "<li><a rel='nofollow' href='" . get_pagenum_link($i) . "'>" . $i . "</a></li>";
             }
         }
-        if ($paged < $pages && $showitems < $pages) echo "<li><a rel='nofollow' href='" . get_pagenum_link($paged + 1) . "'>Next &rsaquo;</a></li>";
-        if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) echo "<a rel='nofollow' href='" . get_pagenum_link($pages) . "'>Last &raquo;</a>";
+        if ($paged < $pages && $showitems < $pages) echo "<li><a rel='nofollow' href='" . get_pagenum_link($paged + 1) . "' style='display:inline-block !important;width: auto !important;padding: 8px 12px;'>Next &rsaquo;</a></li>";
+        if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) echo "<li><a rel='nofollow' href='" . get_pagenum_link($pages) . "' style='display:inline-block !important;width: auto !important;padding: 8px 12px;'>Last &raquo;</a></li>";
         echo "</ul></div>";
     }
 }
@@ -135,4 +135,37 @@ function setPostViews($postID)
 
 // Remove issues with prefetching adding extra views
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+$options = get_option('blog-theme');
+/*------------[ Meta ]-------------*/
+if (!function_exists('mts_meta')) {
+    function mts_meta()
+    {
+        global $options
+        ?>
+        <?php if ($options['mts_favicon'] != '') { ?>
+        <link rel="shortcut icon" href="<?php echo $options['mts_favicon']; ?>"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php } ?>
+        <!--iOS/android/handheld specific -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <?php }
+}
+
+/*------------[ footer ]-------------*/
+if (!function_exists('mts_footer')) {
+    function mts_footer()
+    {
+        global $options
+        ?>
+        <!--start footer code-->
+        <?php if ($options['mts_analytics_code'] != '') { ?>
+            <?php echo $options['mts_analytics_code']; ?>
+        <?php } ?>
+        <!--end footer code-->
+    <?php }
+}
 ?>

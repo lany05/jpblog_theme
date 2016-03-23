@@ -4,7 +4,7 @@ Theme URI: http://blog.id.jobplanet.com
 Author: firmansyah.hadi@braincommerce.com
 Author URI: http://jobplanet.com
 Description: Jobplanet official wordpress theme. Fully responsive & clean design.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -6973,7 +6973,12 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
     letter-spacing: .6px;
     color: rgba(255, 255, 255, 0.8);
 }
-
+.header-jp-blog .logo-blog h3{
+   font-size:inherit;
+   font-weight:300;
+   margin:0;
+   display:inline;
+}
 @media only screen and (max-width: 479px) {
     .header-jp-blog .logo-blog {
         background-size: auto 24px;
@@ -7017,7 +7022,7 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
     margin-top: 0;
     margin-left: 0;
     margin-bottom: 0;
-    margin-right: 43px;
+    margin-right: 45px;
     padding: 0;
     line-height: 60px;
     font-size: 14px;
@@ -7028,6 +7033,8 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
 @media only screen and (min-width: 992px) {
     .menu-wrapper.collapse {
         display: block !important;
+	overflow:visible;
+	background:transparent !important;
     }
 }
 
@@ -7045,8 +7052,9 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
     }
 
     .menu-wrapper.collapse.in {
-        display: block;
+        display: table;
         float: left;
+	background:transparent !important;
     }
 }
 
@@ -7101,9 +7109,10 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
 
 .header-jp-blog .search-toggle {
     position: absolute;
-    right: 15px;
-    top: 12px;
+    right: 10px;
+    top: 13px;
     z-index: 9999;
+    width:43px;
 }
 
 @media only screen and (max-width: 991px) {
@@ -7234,23 +7243,26 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
     }
 }
 
-.jp-promo .welcome-landing h1 {
+.jp-promo .welcome-landing h2 {
     margin-top: 0;
     margin-bottom: 20px;
     font-weight: 500;
+	font-size:36px;
 }
 
 @media only screen and (max-width: 767px) {
-    .jp-promo .welcome-landing h1 {
+    .jp-promo .welcome-landing h2 {
         font-size: 28px;
         margin-bottom: 16px;
     }
 }
 
-.jp-promo .welcome-landing p {
+.jp-promo .welcome-landing h3 {
     margin-bottom: 0;
     line-height: 24px;
     font-size: 18px;
+    font-weight:normal;
+    margin-top:0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -7439,7 +7451,7 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
 
 .card-list .caption .caption-components span {
     display: inline-block;
-    padding-right: 12px;
+    padding-right: 5px;
 }
 
 .card-list .caption .caption-components span a, .card-list .caption .caption-components span .jp-pagination ul > li > .selected, .jp-pagination .card-list .caption .caption-components span ul > li > .selected {
@@ -7945,23 +7957,26 @@ article img {
 }
 
 article img.aligncenter {
-    display: block;
+    display: inline-block;
     margin: 0 auto 16px auto;
     clear: both;
 }
 
 article img.alignleft {
-    display: block;
-    margin: 0 auto 16px 0;
-    clear: both;
+    display: table;
+    margin: 0 20px 16px 0;
+    float:left;
 }
 
 article img.alignright {
-    display: block;
-    margin: 0 0 16px auto;
-    clear: both;
-}
+    display: table;
+    margin: 0 0 16px 24px;
+    float:left;
 
+}
+@media only screen and (max-width: 767px) {
+
+}
 article a, article .jp-pagination ul > li > .selected, .jp-pagination article ul > li > .selected {
     color: #3ac453;
 }
@@ -8389,4 +8404,153 @@ article .comment-area {
     .footer .copy {
         text-align: center;
     }
+}
+
+/*TWITTER*/
+#loading-container {
+    text-align:center;
+    background-image:url('img/loader.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 120px;
+    display: block;
+}
+
+#twitter-feed {
+    width:90%;
+    margin:0;
+    padding-bottom: 20px;
+    background-color:#FFF;
+    color:#333;
+    min-height:140px;
+
+
+    /*------ TWEAK THE BELOW IF YOU WANT TWEETS TO FADE DOWN --- */
+    /*height:90px;
+    overflow:hidden;*/
+}
+
+#twitter-feed h1 {
+    color:#5F5F5F;
+    margin:0px;
+    padding:9px 0px 9px 0px;
+    font-size:18px;
+    font-weight:lighter;
+}
+#twitter-header {
+    background-color:#FFF;
+    position:relative;
+    z-index:2;
+    border-bottom:1px dotted #CCC;
+}
+.twitter-article, #loading-container {
+    width:100%;
+    float:left;
+    padding:0;
+    position:relative;
+}
+.twitter-pic {
+    position:absolute;
+}
+
+.twitter-pic img {
+    float:left;
+    border-radius:7px;
+    border:none;
+
+}
+
+/* -------- TEXT STYLING ------*/
+.twitter-text {
+    width:100%;
+    float:left;
+    font-size:22px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.twitter-text p {
+    margin:0px;
+    line-height:28px;
+}
+.twitter-text a,  h1 a {
+    color: #3ac453;
+    text-decoration: none;
+}
+.twitter-text a:hover,  h1 a:hover {
+    text-decoration: underline;
+    color: #3ac453;
+}
+
+.tweet-time {
+    font-size:14px;
+    color:#999;
+
+}
+.tweet-time a, .tweet-time a:hover {
+    color:#878787;
+}
+
+.tweetprofilelink a {
+    color:#444;
+}
+.tweetprofilelink a:hover {
+    color:#444;
+}
+
+/* -------- FEED  ACTIONS ------*/
+#twitter-actions {
+    width:75px;
+    float:right;
+    margin-right:5px;
+    margin-top:3px;
+    display:none;
+}
+.intent {
+    width:25px;
+    height:16px;
+    float:left;
+}
+.intent a{
+    width:25px;
+    height:16px;
+    display:block;
+    background-image:url(../images/tweet-actions.png);
+    float:left;
+}
+.intent a:hover{
+    background-position:-25px 0px;
+}
+
+#intent-retweet a{
+    background-position:0px -17px;
+}
+#intent-retweet a:hover{
+    background-position:-25px -17px;
+}
+#intent-fave a{
+    background-position:0px -36px;
+}
+#intent-fave a:hover{
+    background-position:-25px -36px;
+}
+
+/* -------- RETWEET INDICATOR ------*/
+#retweet-indicator {
+    width:14px;
+    height:10px;
+    background-image:url(../images/tweet-actions.png);
+    background-position:-5px -54px;
+    margin-top:3px;
+    float:left;
+}
+
+.backlink {
+    font-size:11px;
+    text-align:center;
+}
+
+.backlink a {
+    color:#aaa;
 }

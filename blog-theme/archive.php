@@ -39,10 +39,10 @@
                         <div class="caption">
                             <small class="date"><?php the_time('F jS, Y'); ?></small>
                             <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                                <h1 class="featured-title"><?php the_title(); ?></h1></a>
+                                <h2 class="featured-title"><?php the_title(); ?></h2></a>
                             <div class="caption-components">
                                 <span><i class="fa fa-user"></i> By <?php the_author_posts_link('first_name', 'last_name'); ?></span>
-                                <span><i class="fa fa-comments"></i> <?php comments_number('0', '1', '%'); ?>  </span>
+                                <!-- <span><i class="fa fa-comments"></i> <?php comments_number('0', '1', '%'); ?>  </span> -->
                                 <span><i class="fa fa-eye"></i> <?php echo getPostViews(get_the_ID()); ?></span>
                             </div>
                         </div>
