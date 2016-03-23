@@ -7320,7 +7320,7 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
     overflow: hidden;
 }
 
-.card-list .featured-thumbnail > img {
+.card-list .featured-thumbnail img {
     display: block;
     position: absolute;
     left: 50%;
@@ -7332,7 +7332,7 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
 }
 
 @media only screen and (max-width: 1199px) {
-    .card-list .featured-thumbnail > img {
+    .card-list .featured-thumbnail  img {
         width: 308px;
         height: 358px;
         margin-left: -154px;
@@ -7341,7 +7341,7 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
 }
 
 @media only screen and (max-width: 991px) {
-    .card-list .featured-thumbnail > img {
+    .card-list .featured-thumbnail img {
         width: 361px;
         height: 420px;
         margin-left: -180.5px;
@@ -7350,7 +7350,7 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
 }
 
 @media only screen and (max-width: 767px) {
-    .card-list .featured-thumbnail > img {
+    .card-list .featured-thumbnail img {
         width: 768px;
         height: 894px;
         margin-left: -384px;
@@ -7359,7 +7359,7 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
 }
 
 @media only screen and (max-width: 479px) {
-    .card-list .featured-thumbnail > img {
+    .card-list .featured-thumbnail img {
         width: 470px;
         height: 547px;
         margin-left: -235px;
@@ -7368,7 +7368,7 @@ a:hover, .jp-pagination ul > li > .selected:hover, a:focus, .jp-pagination ul > 
 }
 
 @media only screen and (max-width: 320px) {
-    .card-list .featured-thumbnail > img {
+    .card-list .featured-thumbnail img {
         width: 360px;
         height: 419px;
         margin-left: -180px;
